@@ -29,7 +29,34 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'orders',
     'payments',
+    'notifications',
 ]
+
+# Email Backend Settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# SMTP Configuration for Gmail
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False  # Set this to True if you're using SSL instead of TLS
+
+# Gmail account credentials
+EMAIL_HOST_USER = 'django.test.apis@gmail.com'  # Your Gmail address
+EMAIL_HOST_PASSWORD = 'mpme jrzu tlfy fydy'  # Your Gmail password or App Password
+
+# Default email address used for sending emails from Django
+DEFAULT_FROM_EMAIL = 'django.test.apis@gmail.com'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

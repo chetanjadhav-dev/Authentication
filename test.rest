@@ -17,7 +17,7 @@ Content-Type: application/json
 
 GET http://127.0.0.1:8000/test_token/
 Content-Type: application/json
-Authorization: Token 6d5bdc5cfbd5ae0cdebcc65aa6bb3c5578f175ca
+Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706
 
 
 ### Logout
@@ -25,65 +25,33 @@ POST http://127.0.0.1:8000/logout/
 Content-Type: application/json
 Authorization: Token 23b16808f82e9a41d75fa6d7aabd9af79a5bee16
 
-### Orders
-
-# ### Retrieve all orders ###
-# GET http://127.0.0.1:8000/orders/
-
-# ### Create a new order ###
-# POST http://127.0.0.1:8000/orders/
-# Content-Type: application/json
-
-# {
-#   "order_number": "ORD002",
-#   "customer_name": "Jane Doe",
-#   "total_amount": 120.00,
-#   "is_completed": true
-# }
-
-# ### Retrieve a specific order ###
-# GET http://127.0.0.1:8000/orders/1/
-
-# ### Update a specific order ###
-# PUT http://127.0.0.1:8000/orders/1/
-# Content-Type: application/json
-
-# {
-#   "order_number": "ORD001",
-#   "customer_name": "John Doe",
-#   "total_amount": 150.00,
-#   "is_completed": true
-# }
-
-# ### Delete a specific order ###
-# DELETE http://127.0.0.1:8000/orders/1/ 
 
 ### Authenticated Orders
 
 ### Retrieve all orders (authenticated) ###
 GET http://127.0.0.1:8000/orders/
-Authorization: Token 6d5bdc5cfbd5ae0cdebcc65aa6bb3c5578f175ca
+Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706
 
 ### Create a new order (authenticated) ###
 POST http://127.0.0.1:8000/orders/
 Content-Type: application/json
-Authorization: Token 6d5bdc5cfbd5ae0cdebcc65aa6bb3c5578f175ca
+Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706
 
 {
-  "order_number": "ORD001",
-  "customer_name": "john doe",
-  "total_amount": 250.00,
+  "order_number": "ORD002",
+  "customer_name": "jane doe",
+  "total_amount": 650.00,
   "is_completed": true
 }
 
 ### Retrieve a specific order (authenticated) ###
-GET http://127.0.0.1:8000/orders/2/
-Authorization: Token 6d5bdc5cfbd5ae0cdebcc65aa6bb3c5578f175ca 
+GET http://127.0.0.1:8000/orders/1/
+Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706 
 
 ### Update a specific order (authenticated) ###
 PUT http://127.0.0.1:8000/orders/1/
 Content-Type: application/json
-Authorization: Token 6d5bdc5cfbd5ae0cdebcc65aa6bb3c5578f175ca  
+Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706  
 
 {
   "order_number": "ORD002",
@@ -94,21 +62,21 @@ Authorization: Token 6d5bdc5cfbd5ae0cdebcc65aa6bb3c5578f175ca
 
 ### Delete a specific order (authenticated) ###
 DELETE http://127.0.0.1:8000/orders/2/
-Authorization: Token 6d5bdc5cfbd5ae0cdebcc65aa6bb3c5578f175ca  
+Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706  
 
 ### Payment
 
 ### Retrieve all payments (authenticated) ###
 GET http://127.0.0.1:8000/payments/
-Authorization: Token 6d5bdc5cfbd5ae0cdebcc65aa6bb3c5578f175ca
+Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706
 
 ### Create a new payment (authenticated) ###
 POST http://127.0.0.1:8000/payments/
 Content-Type: application/json
-Authorization: Token 6d5bdc5cfbd5ae0cdebcc65aa6bb3c5578f175ca
+Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706
 
 {
-  "order": 1, 
+  "order_id": 2, 
   "amount": 130.00,
   "transaction_id": "TXN001",
   "payment_method": "Credit Card"
@@ -116,15 +84,15 @@ Authorization: Token 6d5bdc5cfbd5ae0cdebcc65aa6bb3c5578f175ca
 
 ### Retrieve a specific payment (authenticated) ###
 GET http://127.0.0.1:8000/payments/1/
-Authorization: Token 6d5bdc5cfbd5ae0cdebcc65aa6bb3c5578f175ca
+Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706
 
 ### Update a specific payment (authenticated) ###
 PUT http://127.0.0.1:8000/payments/1/
 Content-Type: application/json
-Authorization: Token 6d5bdc5cfbd5ae0cdebcc65aa6bb3c5578f175ca
+Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706
 
 {
-  "order": 1, 
+  "order_id": 2, 
   "amount": 20.00,
   "transaction_id": "TXN002",
   "payment_method": "Credit Card"
@@ -132,4 +100,4 @@ Authorization: Token 6d5bdc5cfbd5ae0cdebcc65aa6bb3c5578f175ca
 
 ### Delete a specific payment (authenticated) ###
 DELETE http://127.0.0.1:8000/payments/1/
-Authorization: Token 6d5bdc5cfbd5ae0cdebcc65aa6bb3c5578f175ca
+Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706

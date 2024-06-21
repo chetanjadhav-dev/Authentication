@@ -101,3 +101,49 @@ Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706
 ### Delete a specific payment (authenticated) ###
 DELETE http://127.0.0.1:8000/payments/1/
 Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706
+
+### Notifications
+
+### Retrieve all notifications (authenticated)
+
+GET http://127.0.0.1:8000/notifications/
+Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706
+
+
+### Create a new notification (authenticated)
+
+POST http://127.0.0.1:8000/notifications/
+Content-Type: application/json
+Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706
+
+{
+  "recipient": "cashjadhav@gmail.com",
+  "subject": "Welcome",
+  "message": "Hello Ernesti, welcome to our service!"
+}
+
+
+
+### Retrieve a specific notification (authenticated)
+
+GET http://127.0.0.1:8000/notifications/4/
+Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706
+
+
+### Update a specific notification (authenticated)
+
+PUT http://127.0.0.1:8000/notifications/2/
+Content-Type: application/json
+Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706
+
+{
+  "recipient": "jane_doe@example.com",
+  "subject": "Updated Subject",
+  "message": "Hello Jane, this is an updated message."
+}
+
+
+### Delete a specific notification (authenticated)
+
+DELETE http://127.0.0.1:8000/notifications/1/
+Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706

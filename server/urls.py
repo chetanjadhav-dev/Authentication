@@ -8,4 +8,5 @@ urlpatterns = [
     path('test_token/', views.test_token, name='test_token'),
     path('', include('orders.urls')),
     path('', include('payments.urls')),
+    path('', include('notifications.urls')),
 ]

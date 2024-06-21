@@ -17,7 +17,7 @@ Content-Type: application/json
 
 GET http://127.0.0.1:8000/test_token/
 Content-Type: application/json
-Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32
+Authorization: Token 6bc1c8088b8df89479dd79eb9e19469f7c5fb860
 
 
 ### Logout
@@ -62,28 +62,28 @@ Authorization: Token 23b16808f82e9a41d75fa6d7aabd9af79a5bee16
 
 ### Retrieve all orders (authenticated) ###
 GET http://127.0.0.1:8000/orders/
-Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32
+Authorization: Token 6bc1c8088b8df89479dd79eb9e19469f7c5fb860
 
 ### Create a new order (authenticated) ###
 POST http://127.0.0.1:8000/orders/
 Content-Type: application/json
-Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32
+Authorization: Token 6bc1c8088b8df89479dd79eb9e19469f7c5fb860
 
 {
-  "order_number": "ORD001",
-  "customer_name": "John Doe",
-  "total_amount": 100.00,
-  "is_completed": false
+  "order_number": "ORD003",
+  "customer_name": "ernesti echevalier",
+  "total_amount": 250.00,
+  "is_completed": true
 }
 
 ### Retrieve a specific order (authenticated) ###
-GET http://127.0.0.1:8000/orders/2/
-Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32 
+GET http://127.0.0.1:8000/orders/3/
+Authorization: Token 6bc1c8088b8df89479dd79eb9e19469f7c5fb860 
 
 ### Update a specific order (authenticated) ###
-PUT http://127.0.0.1:8000/orders/2/
+PUT http://127.0.0.1:8000/orders/1/
 Content-Type: application/json
-Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32  
+Authorization: Token 6bc1c8088b8df89479dd79eb9e19469f7c5fb860  
 
 {
   "order_number": "ORD001",
@@ -94,6 +94,42 @@ Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32
 
 ### Delete a specific order (authenticated) ###
 DELETE http://127.0.0.1:8000/orders/2/
-Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32  
+Authorization: Token 6bc1c8088b8df89479dd79eb9e19469f7c5fb860  
 
 ### Payment
+
+### Retrieve all payments (authenticated) ###
+GET http://127.0.0.1:8000/payments/
+Authorization: Token 6bc1c8088b8df89479dd79eb9e19469f7c5fb860
+
+### Create a new payment (authenticated) ###
+POST http://127.0.0.1:8000/payments/
+Content-Type: application/json
+Authorization: Token 6bc1c8088b8df89479dd79eb9e19469f7c5fb860
+
+{
+  "order": 1, 
+  "amount": 130.00,
+  "transaction_id": "TXN004",
+  "payment_method": "Credit Card"
+}
+
+### Retrieve a specific payment (authenticated) ###
+GET http://127.0.0.1:8000/payments/1/
+Authorization: Token 6bc1c8088b8df89479dd79eb9e19469f7c5fb860
+
+### Update a specific payment (authenticated) ###
+PUT http://127.0.0.1:8000/payments/2/
+Content-Type: application/json
+Authorization: Token 6bc1c8088b8df89479dd79eb9e19469f7c5fb860
+
+{
+  "order": 1, 
+  "amount": 20.00,
+  "transaction_id": "TXN002",
+  "payment_method": "Credit Card"
+}
+
+### Delete a specific payment (authenticated) ###
+DELETE http://127.0.0.1:8000/payments/1/
+Authorization: Token 6bc1c8088b8df89479dd79eb9e19469f7c5fb860

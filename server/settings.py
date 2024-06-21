@@ -32,12 +32,20 @@ INSTALLED_APPS = [
     'notifications',
 ]
 
+# Email Backend Settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.example.com'
+
+# SMTP Configuration for Gmail
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'django.test.apis@gmail.com'
-EMAIL_HOST_PASSWORD = 'Pass@123'
+EMAIL_USE_SSL = False  # Set this to True if you're using SSL instead of TLS
+
+# Gmail account credentials
+EMAIL_HOST_USER = 'django.test.apis@gmail.com'  # Your Gmail address
+EMAIL_HOST_PASSWORD = 'mpme jrzu tlfy fydy'  # Your Gmail password or App Password
+
+# Default email address used for sending emails from Django
 DEFAULT_FROM_EMAIL = 'django.test.apis@gmail.com'
 
 REST_FRAMEWORK = {

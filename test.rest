@@ -117,9 +117,9 @@ Content-Type: application/json
 Authorization: Token d1e4227ac2853c35d9030981c735f9dd15bff706
 
 {
-  "recipient": "cashjadhav@gmail.com",
+  "recipient": "hemantjadhav.dev@gmail.com",
   "subject": "Welcome",
-  "message": "Hello Ernesti, welcome to our service!"
+  "message": "Hello Hemant, welcome to our service!"
 }
 
 

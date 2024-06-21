@@ -97,3 +97,39 @@ DELETE http://127.0.0.1:8000/orders/2/
 Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32  
 
 ### Payment
+
+### Retrieve all payments (authenticated) ###
+GET http://127.0.0.1:8000/payments/
+Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32
+
+### Create a new payment (authenticated) ###
+POST http://127.0.0.1:8000/payments/
+Content-Type: application/json
+Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32
+
+{
+  "order": 4, 
+  "amount": 100.00,
+  "transaction_id": "TXN002",
+  "payment_method": "Credit Card"
+}
+
+### Retrieve a specific payment (authenticated) ###
+GET http://127.0.0.1:8000/payments/1/
+Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32
+
+### Update a specific payment (authenticated) ###
+PUT http://127.0.0.1:8000/payments/2/
+Content-Type: application/json
+Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32
+
+{
+  "order": 4, 
+  "amount": 250.00,
+  "transaction_id": "TXN002",
+  "payment_method": "Credit Card"
+}
+
+### Delete a specific payment (authenticated) ###
+DELETE http://127.0.0.1:8000/payments/1/
+Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32

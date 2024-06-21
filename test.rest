@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### LogIn
 
 POST http://127.0.0.1:8000/login/
@@ -5,6 +6,8 @@ Content-Type: application/json
 
 {"username": "john_doe1", "password": "Pass1234!"}
 
+=======
+>>>>>>> dev-chetan
 ### SignUp
 
 POST http://127.0.0.1:8000/signup/
@@ -13,14 +16,102 @@ Content-Type: application/json
 {"username": "john_doe1", "first_name": "John",
   "last_name": "Doe", "password": "Pass1234!", "email": "john@gmail.com"}
 
+### LogIn
+
+POST http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{"username": "john_doe", "password": "Pass1234!"}
+
 ### Test Token
 
 GET http://127.0.0.1:8000/test_token/
 Content-Type: application/json
+<<<<<<< HEAD
 Authorization: Token 33d64068b46fca421e0df0e13f2a97bc73ec95e8
+=======
+Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32
+>>>>>>> dev-chetan
 
 
 ### Logout
 POST http://127.0.0.1:8000/logout/
 Content-Type: application/json
+<<<<<<< HEAD
 Authorization: Token 33d64068b46fca421e0df0e13f2a97bc73ec95e8
+=======
+Authorization: Token 23b16808f82e9a41d75fa6d7aabd9af79a5bee16
+
+### Orders
+
+# ### Retrieve all orders ###
+# GET http://127.0.0.1:8000/orders/
+
+# ### Create a new order ###
+# POST http://127.0.0.1:8000/orders/
+# Content-Type: application/json
+
+# {
+#   "order_number": "ORD002",
+#   "customer_name": "Jane Doe",
+#   "total_amount": 120.00,
+#   "is_completed": true
+# }
+
+# ### Retrieve a specific order ###
+# GET http://127.0.0.1:8000/orders/1/
+
+# ### Update a specific order ###
+# PUT http://127.0.0.1:8000/orders/1/
+# Content-Type: application/json
+
+# {
+#   "order_number": "ORD001",
+#   "customer_name": "John Doe",
+#   "total_amount": 150.00,
+#   "is_completed": true
+# }
+
+# ### Delete a specific order ###
+# DELETE http://127.0.0.1:8000/orders/1/ 
+
+### Authenticated Orders
+
+### Retrieve all orders (authenticated) ###
+GET http://127.0.0.1:8000/orders/
+Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32
+
+### Create a new order (authenticated) ###
+POST http://127.0.0.1:8000/orders/
+Content-Type: application/json
+Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32
+
+{
+  "order_number": "ORD001",
+  "customer_name": "John Doe",
+  "total_amount": 100.00,
+  "is_completed": false
+}
+
+### Retrieve a specific order (authenticated) ###
+GET http://127.0.0.1:8000/orders/2/
+Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32 
+
+### Update a specific order (authenticated) ###
+PUT http://127.0.0.1:8000/orders/2/
+Content-Type: application/json
+Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32  
+
+{
+  "order_number": "ORD001",
+  "customer_name": "John Doe",
+  "total_amount": 150.00,
+  "is_completed": true
+}
+
+### Delete a specific order (authenticated) ###
+DELETE http://127.0.0.1:8000/orders/2/
+Authorization: Token dc48e4a770f2f6d2135df005fc97c5990aab5e32  
+
+### Payment
+>>>>>>> dev-chetan

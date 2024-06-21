@@ -3,9 +3,8 @@ from .models import Payment
 from orders.models import Order
 
 class PaymentSerializer(serializers.ModelSerializer):
-    order = serializers.PrimaryKeyRelatedField(queryset=Order.objects.all())
+    order_id = serializers.PrimaryKeyRelatedField(queryset=Order.objects.all())
 
     class Meta:
         model = Payment
-        fields = ['order', 'amount', 'transaction_id', 'payment_method']
-
+        fields = ['id', 'order_id', 'amount', 'transaction_id', 'payment_method']
